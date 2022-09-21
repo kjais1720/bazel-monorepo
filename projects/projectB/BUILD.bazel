@@ -1,0 +1,5 @@
+genrule(
+  name="foo",
+  outs=["foo.txt"],
+  cmd_bash = "sleep 3 && echo 'Hello wor' >$@",
+)
