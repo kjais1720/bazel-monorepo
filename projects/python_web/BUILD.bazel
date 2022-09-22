@@ -3,7 +3,7 @@ py_binary(
     name = "main",
     srcs = ["main.py"],
     deps = [
-      "//projects/calculator:calculator",  # a py_library
+      "//projects/python_calculator:calculator",  # a py_library
       requirement("Flask")
     ],
 )
