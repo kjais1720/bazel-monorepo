@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+# gazelle:prefix github.com/example/project
+# gazelle:build_file_name BUILD,BUILD.bazel
+
+go_library(
+    name = "go_hello",
+    srcs = ["hello_world.go"],
+    importpath = "github.com/kjais1720/bazel-monorepo/projects/go_hello",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_test",
+    srcs = [
+        "hello_world.test.go",
+    ],
+    embed = [":go_hello"],
+)
